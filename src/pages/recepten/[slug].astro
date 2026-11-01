@@ -33,9 +33,6 @@ const site = Astro.site ?? new URL('https://bbq.hollink.dev');
         <span aria-hidden="true">/</span>
         <a href={`/categorie/${category.slug}/`}>{category.title}</a>
       </nav>
-      <p class="eyebrow">
-        {category.title} / {recipe.data.difficulty}
-      </p>
       <h1 class="page-title">{recipe.data.title}</h1>
       <p class="lead">{recipe.data.description}</p>
       <p class="published">
