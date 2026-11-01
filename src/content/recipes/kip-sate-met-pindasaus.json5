@@ -1,0 +1,36 @@
+{
+  title: 'Kipsaté met zelfgemaakte pindasaus',
+  description: 'Sappige kipsaté van de BBQ, eenvoudig gemarineerd in ketjap en knoflook. Geserveerd met een zelfgemaakte pindasaus van Calvé pindakaas.',
+  category: 'kip',
+  publishedAt: '2026-11-01',
+  featured: false,
+  difficulty: 'Makkelijk',
+  prepMinutes: 20,
+  cookMinutes: 15,
+  servings: 4,
+  temperatureC: 200,
+  tags: ['kip', 'saté', 'pindasaus', 'direct grillen'],
+  ingredients: [
+    {
+      title: 'Voor de kipsaté',
+      items: ['600 g kippendijfilet', '5 el ketjap manis', '3 teentjes knoflook', 'Satéprikkers'],
+    },
+    {
+      title: 'Voor de pindasaus',
+      items: [
+        '100 g Calvé pindakaas',
+        '2 el ketjap manis',
+        '1 tl sambal oelek',
+        '1 tl bruine basterdsuiker',
+        '150 ml water',
+      ],
+    },
+  ],
+  steps: [
+    'Snijd de kippendijfilet in stukken van ongeveer 3 cm. Meng de ketjap met de geperste knoflook en schep de kip erdoor. Laat minimaal 30 minuten afgedekt marineren in de koelkast.',
+    'Verwarm de BBQ voor op ongeveer 200 °C met een directe grillzone. Rijg de stukjes kip aan satéprikkers. Week houten prikkers vooraf in water om verbranden te beperken.',
+    'Grill de saté ongeveer 10 tot 15 minuten en draai regelmatig. Let op dat de suiker in de ketjap niet verbrandt. Controleer een kerntemperatuur van minimaal 74 °C.',
+    'Verwarm ondertussen pindakaas, ketjap, sambal, bruine suiker en water op laag vuur. Roer tot een gladde pindasaus en voeg zo nodig wat extra water toe.',
+    'Serveer de kipsaté met de warme pindasaus. Lekker met rijst, stokbrood of als losse snack.',
+  ],
+}

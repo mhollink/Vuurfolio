@@ -11,11 +11,19 @@
   temperatureC: 200,
   tags: ['groenten', 'vegetarisch', 'bijgerecht'],
   ingredients: [
-    '4 maïskolven',
-    '75 g zachte roomboter',
-    '1 el fijngehakte peterselie',
-    '1 tl citroenrasp',
-    '1 snuf zout',
+    {
+      title: 'Voor de maïs',
+      items: ['4 maïskolven'],
+    },
+    {
+      title: 'Voor de kruidenboter',
+      items: [
+        '75 g zachte roomboter',
+        '1 el fijngehakte peterselie',
+        '1 tl citroenrasp',
+        '1 snuf zout',
+      ],
+    },
   ],
   steps: [
     'Verwarm de BBQ voor op middelhoge directe hitte.',

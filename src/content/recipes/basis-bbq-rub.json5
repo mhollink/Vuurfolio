@@ -9,12 +9,16 @@
   servings: 8,
   tags: ['rub', 'kruiden', 'voorraad'],
   ingredients: [
-    '3 el paprikapoeder',
-    '2 el bruine basterdsuiker',
-    '1 el knoflookpoeder',
-    '1 el uienpoeder',
-    '2 tl gemalen zwarte peper',
-    '1 tl zout',
+    {
+      items: [
+        '3 el paprikapoeder',
+        '2 el bruine basterdsuiker',
+        '1 el knoflookpoeder',
+        '1 el uienpoeder',
+        '2 tl gemalen zwarte peper',
+        '1 tl zout',
+      ],
+    },
   ],
   steps: [
     'Doe alle droge ingrediënten in een ruime kom en meng goed door elkaar.',

@@ -1,4 +1,5 @@
 import { getCategory } from '../data/categories';
+import { getIngredientItems } from './ingredients';
 import type { Recipe } from './recipes';
 import { recipeUrl } from './recipes';
 
@@ -22,7 +23,7 @@ export function recipeStructuredData(recipe: Recipe, site: URL) {
       recipeYield: data.servings,
       recipeCategory: getCategory(data.category).title,
       keywords: data.tags.join(', '),
-      recipeIngredient: data.ingredients,
+      recipeIngredient: getIngredientItems(data.ingredients),
       recipeInstructions: data.steps.map((text, index) => ({
         '@type': 'HowToStep',
         position: index + 1,

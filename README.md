@@ -36,8 +36,18 @@ voordat je de GitHub Actions CI gebruikt (`--frozen-lockfile`).
    Configureer hiervoor apart een deploymentstap.
 
 `JSON5` ondersteunt commentaar, ongequote propertynamen en trailing comma's. Nieuwe recepten mogen geen executable HTML
-of JavaScript bevatten. Hou instructies en ingrediënten in aparte arrays voor toegankelijkheid, gestructureerde gegevens
-en toekomstige functies zoals porties aanpassen.
+of JavaScript bevatten. Instructies staan als losse teksten in `steps`; ingrediënten staan in één of meer groepen:
+
+```json5
+ingredients: [
+  { title: 'Voor de marinade', items: ['5 el ketjap manis', '3 teentjes knoflook'] },
+  { title: 'Voor de saus', items: ['100 g pindakaas', '150 ml water'] },
+],
+```
+
+Elke groep heeft minimaal één ingrediënt. Bij meerdere groepen is `title` verplicht. Bij precies één groep mag je
+`title` weglaten; de pagina toont dan alleen de algemene kop **Ingrediënten**. De losse ingrediënten worden voor
+zoeken en Schema.org automatisch in dezelfde volgorde samengevoegd.
 
 ## Projectstructuur
 

@@ -11,12 +11,14 @@
   temperatureC: 180,
   tags: ['kip', 'glaze', 'doordeweeks'],
   ingredients: [
-    '800 g kippendijen zonder bot',
-    '2 el grove mosterd',
-    '2 el honing',
-    '1 el appelazijn',
-    '1 tl gerookt paprikapoeder',
-    'Zout en peper naar smaak',
+    {
+      title: 'Voor de kip',
+      items: ['800 g kippendijen zonder bot', 'Zout en peper naar smaak'],
+    },
+    {
+      title: 'Voor de honing-mosterdglaze',
+      items: ['2 el grove mosterd', '2 el honing', '1 el appelazijn', '1 tl gerookt paprikapoeder'],
+    },
   ],
   steps: [
     'Verwarm de BBQ met een indirecte zone voor op ongeveer 180 °C.',

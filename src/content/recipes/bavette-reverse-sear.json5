@@ -11,10 +11,14 @@
   temperatureC: 120,
   tags: ['reverse sear', 'rundvlees', 'direct grillen'],
   ingredients: [
-    '800 g bavette',
-    '1 el grof zeezout',
-    '1 tl versgemalen zwarte peper',
-    '1 el olijfolie',
+    {
+      items: [
+        '800 g bavette',
+        '1 el grof zeezout',
+        '1 tl versgemalen zwarte peper',
+        '1 el olijfolie',
+      ],
+    },
   ],
   steps: [
     'Stook de BBQ op voor indirecte bereiding rond 120 °C.',

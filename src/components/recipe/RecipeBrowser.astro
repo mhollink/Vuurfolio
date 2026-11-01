@@ -2,6 +2,7 @@
 import type { Recipe } from '../../lib/recipes';
 import RecipeCard from './RecipeCard.astro';
 import { getCategory } from '../../data/categories';
+import { getIngredientItems } from '../../lib/ingredients';
 import Icon from '../ui/Icon.astro';
 interface Props {
   recipes: Recipe[];
@@ -50,7 +51,8 @@ const { recipes, searchable = false } = Astro.props;
           recipe.data.description,
           getCategory(recipe.data.category).title,
           ...recipe.data.tags,
-          ...recipe.data.ingredients,
+          ...recipe.data.ingredients.map((group) => group.title ?? ''),
+          ...getIngredientItems(recipe.data.ingredients),
         ].join(' ')}
       >
         <RecipeCard recipe={recipe} />

@@ -12,11 +12,15 @@
   temperatureC: 110,
   tags: ['low & slow', 'rookhout', 'procureur'],
   ingredients: [
-    '2,5 kg procureur',
-    '4 el BBQ-rub naar keuze',
-    '2 el mosterd',
-    '100 ml appelsap',
-    'BBQ-saus naar smaak',
+    {
+      items: [
+        '2,5 kg procureur',
+        '4 el BBQ-rub naar keuze',
+        '2 el mosterd',
+        '100 ml appelsap',
+        'BBQ-saus naar smaak',
+      ],
+    },
   ],
   steps: [
     'Verwarm de BBQ indirect voor op ongeveer 110 °C en voeg een beetje rookhout toe.',

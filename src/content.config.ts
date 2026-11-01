@@ -25,7 +25,18 @@ const recipeSchema = z.object({
     .regex(/^\/images\/recipes\/[a-zA-Z0-9/_-]+\.(?:jpg|jpeg|png|webp|avif)$/)
     .optional(),
   tags: z.array(z.string().min(1)).default([]),
-  ingredients: z.array(z.string().min(2)).min(1),
+  ingredients: z
+    .array(
+      z.object({
+        title: z.string().trim().min(2).optional(),
+        items: z.array(z.string().min(2)).min(1),
+      }),
+    )
+    .min(1)
+    .refine(
+      (groups) => groups.length === 1 || groups.every((group) => group.title),
+      'Every ingredient group needs a title when a recipe has multiple groups',
+    ),
   steps: z.array(z.string().min(10)).min(1),
 });
 
