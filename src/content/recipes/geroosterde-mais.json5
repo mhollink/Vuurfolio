@@ -1,0 +1,26 @@
+{
+  title: 'Geroosterde maïs met kruidenboter',
+  description: 'Zoete maïskolven van het rooster met citroen, verse kruiden en romige boter.',
+  category: 'bijgerechten',
+  publishedAt: '2026-10-06',
+  featured: true,
+  difficulty: 'Makkelijk',
+  prepMinutes: 10,
+  cookMinutes: 15,
+  servings: 4,
+  temperatureC: 200,
+  tags: ['groenten', 'vegetarisch', 'bijgerecht'],
+  ingredients: [
+    '4 maïskolven',
+    '75 g zachte roomboter',
+    '1 el fijngehakte peterselie',
+    '1 tl citroenrasp',
+    '1 snuf zout',
+  ],
+  steps: [
+    'Verwarm de BBQ voor op middelhoge directe hitte.',
+    'Meng boter, peterselie, citroenrasp en zout in een kommetje.',
+    'Leg de maïskolven op het rooster en draai ze regelmatig tot rondom donkere grillstrepen ontstaan.',
+    'Besmeer de warme kolven met kruidenboter en serveer meteen.',
+  ],
+}

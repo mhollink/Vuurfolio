@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RecipeBrowser from '../../components/recipe/RecipeBrowser.astro';
+import { categories, type CategorySlug } from '../../data/categories';
+import { getRecipesByCategory } from '../../lib/recipes';
+import { recipeListStructuredData } from '../../lib/seo';
+import CategorySelector from '../../components/catagory/CategorySelector.astro';
+
+export function getStaticPaths() {
+  return categories.map((category) => ({ params: { slug: category.slug }, props: { category } }));
+}
+const { category } = Astro.props as { category: (typeof categories)[number] };
+const recipes = await getRecipesByCategory(category.slug as CategorySlug);
+const site = Astro.site ?? new URL('https://bbq.hollink.dev');
+---
+
+<BaseLayout
+  title={`BBQ recepten: ${category.title}`}
+  description={`Alle BBQ-recepten voor ${category.title.toLowerCase()}. ${category.description}`}
+  jsonLd={recipeListStructuredData(recipes, site)}
+>
+  <section class="section wrap">
+    <a class="back" href="/recepten/">
+      ← Alle recepten
+    </a>
+    <h1 class="page-title">{category.title}</h1>
+    <p class="lead">{category.description} Bekijk alle recepten in deze categorie.</p>
+    <CategorySelector active={category} />
+    <RecipeBrowser recipes={recipes} />
+  </section>
+</BaseLayout>
+<style>
+  .back {
+    display: inline-block;
+    color: var(--rust);
+    font-weight: 750;
+    font-size: 0.85rem;
+    text-decoration: none;
+  }
+
+  .lead {
+    margin: 20px 0 44px;
+  }
+</style>

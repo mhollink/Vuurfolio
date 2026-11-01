@@ -1,0 +1,206 @@
+---
+import type { Recipe } from '../../lib/recipes';
+import RecipeCard from './RecipeCard.astro';
+import { getCategory } from '../../data/categories';
+import Icon from '../ui/Icon.astro';
+interface Props {
+  recipes: Recipe[];
+  searchable?: boolean;
+}
+const { recipes, searchable = false } = Astro.props;
+---
+
+<div class="browser" data-recipe-browser>
+  {searchable && (
+    <div class="toolbar">
+      <div class="search-field">
+        <label for="recipe-search">Zoek een recept</label>
+        <div class="search-input">
+          <Icon name="search" size={20} />
+          <input
+            id="recipe-search"
+            type="search"
+            placeholder="Zoek op naam, ingrediënt of categorie"
+            autocomplete="off"
+            data-recipe-search
+          />
+        </div>
+      </div>
+      <div class="view-tools" hidden data-view-tools aria-label="Weergave wijzigen">
+        <button type="button" data-view="grid" aria-pressed="true">
+          Grid
+        </button>
+        <button type="button" data-view="list" aria-pressed="false">
+          Lijst
+        </button>
+      </div>
+    </div>
+  )}
+  {searchable && (
+    <p class="result-count" data-result-count role="status" aria-live="polite">
+      {recipes.length} recepten
+    </p>
+  )}
+  <ul class="recipe-grid" data-recipe-grid>
+    {recipes.map((recipe) => (
+      <li
+        data-recipe-card
+        data-search-text={[
+          recipe.data.title,
+          recipe.data.description,
+          getCategory(recipe.data.category).title,
+          ...recipe.data.tags,
+          ...recipe.data.ingredients,
+        ].join(' ')}
+      >
+        <RecipeCard recipe={recipe} />
+      </li>
+    ))}
+  </ul>
+  <p class="no-results" data-no-results hidden>
+    Geen recepten gevonden. Probeer een andere zoekterm.
+  </p>
+</div>
+<script>
+  const browser = document.querySelector<HTMLElement>('[data-recipe-browser]');
+  const search = browser?.querySelector<HTMLInputElement>('[data-recipe-search]');
+  const grid = browser?.querySelector<HTMLElement>('[data-recipe-grid]');
+  const viewTools = browser?.querySelector<HTMLElement>('[data-view-tools]');
+  const cards = [...(browser?.querySelectorAll<HTMLElement>('[data-recipe-card]') ?? [])];
+  const count = browser?.querySelector<HTMLElement>('[data-result-count]');
+  const empty = browser?.querySelector<HTMLElement>('[data-no-results]');
+
+  const normalize = (value: string) =>
+    value
+      .toLocaleLowerCase('nl')
+      .normalize('NFKD')
+      .replace(/\p{Diacritic}/gu, '');
+
+  if (search) {
+    viewTools?.removeAttribute('hidden');
+    const filter = () => {
+      const terms = normalize(search.value).trim().split(/\s+/).filter(Boolean);
+      let visible = 0;
+      for (const card of cards) {
+        const text = normalize(card.dataset.searchText ?? '');
+        card.hidden = !terms.every((term) => text.includes(term));
+        if (!card.hidden) visible++;
+      }
+      if (count) count.textContent = `${visible} ${visible === 1 ? 'recept' : 'recepten'}`;
+      if (empty) empty.hidden = visible !== 0;
+    };
+    search.addEventListener('input', filter);
+    viewTools?.querySelectorAll<HTMLButtonElement>('[data-view]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const isList = button.dataset.view === 'list';
+        grid?.classList.toggle('is-list', isList);
+        viewTools?.querySelectorAll<HTMLButtonElement>('[data-view]').forEach((control) => {
+          control.setAttribute('aria-pressed', String(control === button));
+        });
+      });
+    });
+  }
+</script>
+<style>
+  .toolbar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 12px;
+  }
+
+  .search-field {
+    width: min(520px, 100%);
+  }
+
+  .search-field label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-weight: 750;
+    margin-bottom: 11px;
+  }
+
+  .search-input {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 17px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    color: var(--muted);
+  }
+
+  .search-input:focus-within {
+    outline: 2px solid var(--rust);
+  }
+
+  input {
+    border: 0;
+    outline: none;
+    width: 100%;
+    height: 52px;
+    background: transparent;
+    min-width: 0;
+    color: var(--ink);
+  }
+
+  .view-tools {
+    display: inline-flex;
+    padding: 4px;
+    background: var(--soft);
+    border-radius: 7px;
+    gap: 4px;
+  }
+
+  .view-tools[hidden] {
+    display: none;
+  }
+
+  .view-tools button {
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    border-radius: 5px;
+    padding: 10px 14px;
+    font-weight: 700;
+    font-size: 0.83rem;
+  }
+
+  .view-tools button[aria-pressed='true'] {
+    background: var(--white);
+    color: var(--ink);
+    box-shadow: 0 1px 4px #00000012;
+  }
+
+  .result-count {
+    margin: 16px 0 24px;
+    color: var(--muted);
+    font-size: 0.81rem;
+  }
+
+  .no-results {
+    margin: 30px 0;
+    padding: 32px;
+    background: var(--soft);
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .no-results[hidden] {
+    display: none;
+  }
+
+  @media (max-width: 540px) {
+    .toolbar {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .view-tools {
+      align-self: flex-end;
+    }
+  }
+</style>

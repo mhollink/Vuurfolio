@@ -1,0 +1,72 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  description?: string;
+  href?: string;
+  linkText?: string;
+}
+const { eyebrow, title, description, href, linkText = 'Bekijk alles' } = Astro.props;
+---
+
+<div class="heading">
+  <div>
+    <p class="eyebrow">{eyebrow}</p>
+    <h2>{title}</h2>
+    {description && <p class="description">{description}</p>}
+  </div>
+  {href && (
+    <a href={href}>
+      {linkText}
+      <span aria-hidden="true">→</span>
+    </a>
+  )}
+</div>
+<style>
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 25px;
+    margin-bottom: 33px;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-family: var(--serif);
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+  }
+
+  .description {
+    margin: 13px 0 0;
+    max-width: 550px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  a {
+    flex-shrink: 0;
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    color: var(--rust);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 800;
+    padding-bottom: 7px;
+  }
+
+  a:hover {
+    color: var(--rust-dark);
+  }
+
+  @media (max-width: 620px) {
+    .heading {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

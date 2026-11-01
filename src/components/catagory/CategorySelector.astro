@@ -1,0 +1,43 @@
+---
+import { categories } from '../../data/categories';
+interface Props {
+  active?: (typeof categories)[number];
+}
+const { active } = Astro.props;
+---
+
+<nav class="category-nav" aria-label="Receptcategorieën">
+  {categories.map((category) => (
+    <a
+      href={`/categorie/${category.slug}/`}
+      class={active && active.number === category.number ? 'active' : ''}
+    >
+      {category.title}
+    </a>
+  ))}
+</nav>
+<style>
+  .category-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin: 0 0 36px;
+  }
+
+  .category-nav a {
+    padding: 9px 14px;
+    border: 1px solid var(--line);
+    border-radius: 40px;
+    text-decoration: none;
+    color: var(--ink);
+    background: var(--white);
+    font-size: 0.81rem;
+    font-weight: 700;
+  }
+
+  .category-nav a:hover,
+  .category-nav a.active {
+    border-color: var(--rust);
+    color: var(--rust);
+  }
+</style>

@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RecipeBrowser from '../../components/recipe/RecipeBrowser.astro';
+import { getRecipes } from '../../lib/recipes';
+import { recipeListStructuredData } from '../../lib/seo';
+import CategorySelector from '../../components/catagory/CategorySelector.astro';
+const recipes = await getRecipes();
+const site = Astro.site ?? new URL('https://bbq.hollink.dev');
+---
+
+<BaseLayout
+  title="Alle BBQ recepten"
+  description="Ontdek alle BBQ-recepten. Zoek tussen vlees, vis, bijgerechten, sauzen en rubs."
+  jsonLd={recipeListStructuredData(recipes, site)}
+>
+  <section class="section wrap">
+    <p class="eyebrow">Het receptenboek</p>
+    <h1 class="page-title">Alle BBQ recepten</h1>
+    <p class="lead">
+      Van een snelle grillavond tot een dag rustig garen. Zoek een recept of kies een categorie.
+    </p>
+    <CategorySelector />
+    <RecipeBrowser recipes={recipes} searchable />
+  </section>
+</BaseLayout>
+<style>
+  .lead {
+    margin-bottom: 28px;
+  }
+</style>

@@ -1,0 +1,55 @@
+---
+interface Props {
+  name: 'flame' | 'arrow' | 'clock' | 'users' | 'search' | 'menu' | 'chevron';
+  size?: number;
+}
+const { name, size = 20 } = Astro.props;
+---
+
+<svg
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+  focusable="false"
+>
+  {name === 'flame' && (
+    <path d="M12 22c5 0 8-3.6 8-8.1 0-3.2-1.7-5.9-4.6-8.1.2 3.4-1.1 4.3-2.2 4.7C12 6.5 12.7 4.1 10.5 2 9.5 6.1 4 9 4 14c0 4.4 3 8 8 8Z" />
+  )}
+  {name === 'arrow' && (
+    <>
+      <path d="M4 12h16" />
+      <path d="m13 5 7 7-7 7" />
+    </>
+  )}
+  {name === 'clock' && (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l4 2" />
+    </>
+  )}
+  {name === 'users' && (
+    <>
+      <circle cx="9" cy="8" r="3" />
+      <path d="M3 20v-2a6 6 0 0 1 12 0v2" />
+      <path d="M16 5a3 3 0 0 1 0 6M17 15a5 5 0 0 1 4 5" />
+    </>
+  )}
+  {name === 'search' && (
+    <>
+      <circle cx="10.8" cy="10.8" r="6.8" />
+      <path d="m16 16 5 5" />
+    </>
+  )}
+  {name === 'menu' && (
+    <>
+      <path d="M4 6h16M4 12h16M4 18h16" />
+    </>
+  )}
+  {name === 'chevron' && <path d="m7 10 5 5 5-5" />}
+</svg>

@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Pagina niet gevonden"
+  description="Deze pagina bestaat niet (meer). Bekijk onze BBQ-recepten."
+>
+  <section class="section wrap error">
+    <p class="eyebrow">404 / Niet gevonden</p>
+    <h1 class="page-title">Hier brandt geen vuur.</h1>
+    <p class="lead">
+      Deze pagina kunnen we niet vinden. Misschien vind je tussen de recepten wat je zoekt.
+    </p>
+    <a href="/recepten/" class="button">
+      Bekijk de recepten
+    </a>
+  </section>
+</BaseLayout>
+<style>
+  .error {
+    min-height: 60vh;
+  }
+
+  .error .lead {
+    margin-bottom: 30px;
+  }
+</style>

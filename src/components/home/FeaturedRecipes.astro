@@ -1,0 +1,46 @@
+---
+import type { Recipe } from '../../lib/recipes';
+import RecipeCard from '../recipe/RecipeCard.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+interface Props {
+  recipes: Recipe[];
+}
+const { recipes } = Astro.props;
+---
+
+<section class="section">
+  <div class="wrap">
+    <SectionHeading
+      eyebrow="De favorieten"
+      title="Recepten om mee te beginnen"
+      description="Een paar fijne recepten, voor wie graag iets lekkers op tafel zet."
+      href="/recepten/"
+      linkText="Alle recepten"
+    />
+    <ul class="recipe-grid featured-grid">
+      {recipes.map((recipe) => (
+        <li>
+          <RecipeCard recipe={recipe} />
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .featured-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  @media (max-width: 1000px) {
+    .featured-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 540px) {
+    .featured-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/home/Hero.astro';
+import FeaturedRecipes from '../components/home/FeaturedRecipes.astro';
+import { getFeaturedRecipes } from '../lib/recipes';
+const featured = await getFeaturedRecipes();
+---
+
+<BaseLayout
+  title="Home"
+  description="BBQ-recepten voor iedereen. Van low & slow tot snelle gerechten van de grill, met duidelijke ingrediënten en bereidingsstappen."
+>
+  <Hero recipe={featured[0]} />
+  <FeaturedRecipes recipes={featured} />
+  <section class="quote-section">
+    <div class="wrap">
+      <span>Een goed recept hoeft niet ingewikkeld te zijn.</span>
+      <p>Een beetje vuur, goede ingrediënten en de tijd nemen om ervan te genieten.</p>
+      <a class="button button--outline" href="/over/">
+        Het verhaal achter deze site
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+<style>
+  .quote-section {
+    padding-block: 82px;
+    text-align: center;
+  }
+
+  .quote-section span {
+    display: block;
+    max-width: 760px;
+    margin: 0 auto 18px;
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.15;
+  }
+
+  .quote-section p {
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  .quote-section a {
+    margin-top: 14px;
+  }
+</style>

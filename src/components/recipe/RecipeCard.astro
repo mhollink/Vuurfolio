@@ -1,0 +1,132 @@
+---
+import type { Recipe } from '../../lib/recipes';
+import { getCategory } from '../../data/categories';
+import { formatMinutes } from '../../lib/time';
+import { recipeUrl } from '../../lib/recipes';
+import RecipeMedia from './RecipeMedia.astro';
+import Icon from '../ui/Icon.astro';
+
+interface Props {
+  recipe: Recipe;
+}
+const { recipe } = Astro.props;
+const category = getCategory(recipe.data.category);
+const minutes = recipe.data.prepMinutes + recipe.data.cookMinutes;
+---
+
+<article class="recipe-card">
+  <a
+    href={recipeUrl(recipe)}
+    class="media-link"
+    aria-label={`Bekijk recept: ${recipe.data.title}`}
+    tabindex="-1"
+  >
+    <RecipeMedia
+      title={recipe.data.title}
+      category={recipe.data.category}
+      image={recipe.data.image}
+    />
+  </a>
+  <div class="content">
+    <span class="category">{category.title}</span>
+    <h3>
+      <a href={recipeUrl(recipe)}>{recipe.data.title}</a>
+    </h3>
+    <p>{recipe.data.description}</p>
+    <div class="details">
+      <span>
+        <Icon name="clock" size={16} />
+        {formatMinutes(minutes)}
+      </span>
+      <span>{recipe.data.difficulty}</span>
+    </div>
+  </div>
+</article>
+<style>
+  .recipe-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    background: var(--white);
+    box-shadow: 0 7px 28px #3b35220b;
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s;
+  }
+
+  .recipe-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 35px #3b35221c;
+  }
+
+  .media-link {
+    display: block;
+    text-decoration: none;
+  }
+
+  .content {
+    padding: 23px 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-width: 0;
+  }
+
+  .category {
+    color: var(--rust);
+    text-transform: uppercase;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+  }
+
+  h3 {
+    margin: 9px 0;
+    font-size: clamp(1.2rem, 1.5vw, 1.45rem);
+    font-weight: 500;
+    line-height: 1.21;
+    font-family: var(--serif);
+  }
+
+  h3 a {
+    text-decoration: none;
+  }
+
+  h3 a:hover {
+    color: var(--rust);
+  }
+
+  p {
+    margin: 0 0 25px;
+    font-size: 0.89rem;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+
+  .details {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 19px;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid var(--line);
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .details span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  @media (max-width: 540px) {
+    .content {
+      padding: 18px;
+    }
+  }
+</style>

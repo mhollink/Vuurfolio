@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RecipeFacts from '../../components/recipe/RecipeFacts.astro';
+import RecipeMedia from '../../components/recipe/RecipeMedia.astro';
+import RecipeIngredients from '../../components/recipe/RecipeIngredients.astro';
+import RecipeSteps from '../../components/recipe/RecipeSteps.astro';
+import { getRecipes, type Recipe } from '../../lib/recipes';
+import { getCategory } from '../../data/categories';
+import { recipeStructuredData } from '../../lib/seo';
+
+export async function getStaticPaths() {
+  const recipes = await getRecipes();
+  return recipes.map((recipe) => ({ params: { slug: recipe.id }, props: { recipe } }));
+}
+
+const { recipe } = Astro.props as { recipe: Recipe };
+const category = getCategory(recipe.data.category);
+const site = Astro.site ?? new URL('https://bbq.hollink.dev');
+---
+
+<BaseLayout
+  title={recipe.data.title}
+  description={recipe.data.description}
+  image={recipe.data.image}
+  jsonLd={recipeStructuredData(recipe, site)}
+>
+  <article>
+    <header class="wrap recipe-header">
+      <nav aria-label="Broodkruimelnavigatie" class="breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="/recepten/">Recepten</a>
+        <span aria-hidden="true">/</span>
+        <a href={`/categorie/${category.slug}/`}>{category.title}</a>
+      </nav>
+      <p class="eyebrow">
+        {category.title} / {recipe.data.difficulty}
+      </p>
+      <h1 class="page-title">{recipe.data.title}</h1>
+      <p class="lead">{recipe.data.description}</p>
+      <p class="published">
+        Gepubliceerd op
+        <time datetime={recipe.data.publishedAt}>
+          {new Intl.DateTimeFormat('nl-NL', {
+            dateStyle: 'long',
+            timeZone: 'UTC',
+          }).format(new Date(`${recipe.data.publishedAt}T12:00:00Z`))}
+        </time>
+      </p>
+    </header>
+    <div class="wrap top-content">
+      <div class="image-wrap">
+        <RecipeMedia
+          title={recipe.data.title}
+          category={recipe.data.category}
+          image={recipe.data.image}
+          eager
+        />
+      </div>
+      <RecipeFacts recipe={recipe} />
+    </div>
+    <div class="wrap recipe-body">
+      <RecipeIngredients ingredients={recipe.data.ingredients} />
+      <RecipeSteps steps={recipe.data.steps} />
+    </div>
+    <div class="wrap back-link">
+      <a href="/recepten/">← Terug naar alle recepten</a>
+    </div>
+  </article>
+</BaseLayout>
+<style>
+  .recipe-header {
+    padding-top: 48px;
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    flex-wrap: wrap;
+    font-size: 0.78rem;
+    margin-bottom: 45px;
+    color: var(--muted);
+  }
+
+  .breadcrumb a {
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  .recipe-header h1 {
+    max-width: 900px;
+  }
+
+  .recipe-header .lead {
+    max-width: 820px;
+    margin: 22px 0 10px;
+  }
+
+  .published {
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-bottom: 33px;
+  }
+
+  .top-content {
+    display: grid;
+    gap: 20px;
+  }
+
+  .image-wrap {
+    max-height: 540px;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .image-wrap :global(.recipe-media) {
+    height: 100%;
+    aspect-ratio: 21 / 9;
+  }
+
+  .recipe-body {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.7fr) minmax(0, 1.3fr);
+    gap: clamp(32px, 6vw, 90px);
+    margin-block: 60px;
+  }
+
+  .back-link {
+    margin-bottom: 80px;
+  }
+
+  .back-link a {
+    color: var(--rust);
+    text-decoration: none;
+    font-weight: 800;
+  }
+
+  @media (max-width: 700px) {
+    .image-wrap :global(.recipe-media) {
+      aspect-ratio: 4/3;
+    }
+
+    .recipe-body {
+      grid-template-columns: 1fr;
+    }
+
+    .breadcrumb {
+      margin-bottom: 28px;
+    }
+  }
+</style>

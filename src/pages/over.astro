@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Over deze website"
+  description="Over BBQ Recepten: recepten om vaker zelf buiten te koken, zonder onnodig ingewikkelde stappen."
+>
+  <section class="section wrap about">
+    <div>
+      <h1 class="page-title">BBQ is meer dan alleen grillen.</h1>
+      <p class="lead">
+        Buiten koken draait om experimenteren, de tijd nemen en uiteindelijk samen iets lekkers
+        eten.
+      </p>
+      <p>
+        Op deze website verzamel ik recepten die je zelf kunt bereiden op de BBQ. Van eenvoudige
+        gerechten voor een doordeweekse avond tot recepten waar je rustig een hele middag voor
+        uittrekt.
+      </p>
+      <p>
+        Geen ingewikkelde accounts of betaalmuren. Gewoon duidelijke ingrediënten, praktische
+        instructies en inspiratie om zelf aan de slag te gaan.
+      </p>
+      <a href="/recepten/" class="button">
+        Ontdek de recepten
+      </a>
+    </div>
+    <aside class="about-aside">
+      <span>01 / Vuur</span>
+      <strong>
+        Eenvoudig.
+        <br />
+        Smaakvol.
+        <br />
+        Buiten.
+      </strong>
+      <p>Meer koken. Minder gedoe.</p>
+    </aside>
+  </section>
+</BaseLayout>
+<style>
+  .about {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: start;
+    gap: 70px;
+  }
+
+  .about p:not(.eyebrow) {
+    line-height: 1.9;
+    color: var(--muted);
+  }
+
+  .about .button {
+    margin-top: 18px;
+  }
+
+  .about-aside {
+    padding: 55px 36px;
+    min-height: 460px;
+    border-radius: 8px;
+    background: var(--forest);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .about-aside span {
+    color: #b9cfb9;
+    font-size: 0.8rem;
+  }
+
+  .about-aside strong {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    font-weight: 500;
+    line-height: 1.15;
+  }
+
+  .about-aside p {
+    color: #cdd5cb !important;
+  }
+
+  @media (max-width: 750px) {
+    .about {
+      grid-template-columns: 1fr;
+    }
+
+    .about-aside {
+      min-height: 300px;
+    }
+  }
+</style>

@@ -1,0 +1,28 @@
+{
+  // De bestandsnaam is de URL: /recepten/pulled-pork/
+  title: 'Pulled pork van de BBQ',
+  description: 'Langzaam gegaarde procureur met een mooie bark, een beetje rook en vlees dat je met twee vorken uit elkaar trekt.',
+  category: 'varken',
+  publishedAt: '2026-10-15',
+  featured: true,
+  difficulty: 'Gemiddeld',
+  prepMinutes: 30,
+  cookMinutes: 480,
+  servings: 8,
+  temperatureC: 110,
+  tags: ['low & slow', 'rookhout', 'procureur'],
+  ingredients: [
+    '2,5 kg procureur',
+    '4 el BBQ-rub naar keuze',
+    '2 el mosterd',
+    '100 ml appelsap',
+    'BBQ-saus naar smaak',
+  ],
+  steps: [
+    'Verwarm de BBQ indirect voor op ongeveer 110 °C en voeg een beetje rookhout toe.',
+    'Dep de procureur droog, smeer dun in met mosterd en verdeel de rub over het vlees.',
+    'Leg de procureur op het rooster en laat rustig garen totdat de bark stevig en donker is.',
+    'Wikkel het vlees desgewenst in met wat appelsap en gaar verder tot het botermals is, meestal rond een kerntemperatuur van 92 tot 95 °C.',
+    'Laat minstens 30 minuten rusten. Trek het vlees uit elkaar en meng eventueel met wat BBQ-saus.',
+  ],
+}

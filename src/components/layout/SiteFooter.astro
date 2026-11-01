@@ -1,0 +1,71 @@
+<footer class="footer">
+  <div class="wrap footer-content">
+    <div>
+      <strong>BBQ Recepten.</strong>
+      <p>Goede recepten. Eerlijk vuur. Lekker eten.</p>
+    </div>
+    <nav aria-label="Footernavigatie">
+      <a href="/">Home</a>
+      <a href="/recepten/">Recepten</a>
+      <a href="/over/">Over</a>
+    </nav>
+    <small>© {new Date().getFullYear()} BBQ Recepten</small>
+  </div>
+</footer>
+<style>
+  .footer {
+    background: var(--forest);
+    color: #f6f2e8;
+    margin-top: 45px;
+  }
+
+  .footer-content {
+    min-height: 230px;
+    padding-block: 44px;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .footer strong {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.8rem;
+  }
+
+  .footer p {
+    color: #becabf;
+    font-size: 0.95rem;
+  }
+
+  .footer nav {
+    display: flex;
+    gap: 13px;
+  }
+
+  .footer nav a {
+    color: #f6f2e8;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .footer nav a:hover {
+    text-decoration: underline;
+  }
+
+  .footer small {
+    color: #becabf;
+  }
+
+  @media (max-width: 700px) {
+    .footer-content {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .footer small {
+      grid-column: 1/-1;
+    }
+  }
+</style>

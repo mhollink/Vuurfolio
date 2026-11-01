@@ -1,0 +1,74 @@
+---
+import type { Recipe } from '../../lib/recipes';
+import { formatMinutes } from '../../lib/time';
+import Icon from '../ui/Icon.astro';
+interface Props {
+  recipe: Recipe;
+}
+const { recipe } = Astro.props;
+---
+
+<dl class="facts">
+  <div>
+    <dt>
+      <Icon name="clock" size={17} />
+      Voorbereiding
+    </dt>
+    <dd>{formatMinutes(recipe.data.prepMinutes)}</dd>
+  </div>
+  <div>
+    <dt>
+      <Icon name="clock" size={17} />
+      Bereiding
+    </dt>
+    <dd>{formatMinutes(recipe.data.cookMinutes)}</dd>
+  </div>
+  <div>
+    <dt>
+      <Icon name="users" size={17} />
+      Porties
+    </dt>
+    <dd>{recipe.data.servings} personen</dd>
+  </div>
+  <div>
+    <dt>Moeilijkheid</dt>
+    <dd>{recipe.data.difficulty}</dd>
+  </div>
+  {recipe.data.temperatureC && (
+    <div>
+      <dt>BBQ-temperatuur</dt>
+      <dd>{recipe.data.temperatureC} °C</dd>
+    </div>
+  )}
+</dl>
+<style>
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    gap: 14px;
+    margin: 0;
+    padding: 23px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--white);
+  }
+
+  .facts > div {
+    padding: 5px 12px;
+  }
+
+  dt {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 9px;
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+
+  dd {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 750;
+  }
+</style>

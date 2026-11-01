@@ -1,0 +1,178 @@
+---
+import Icon from '../ui/Icon.astro';
+const current = Astro.url.pathname;
+const links = [
+  { href: '/recepten/', label: 'Alle recepten' },
+  { href: '/categorie/rund/', label: 'Categorieën' },
+  { href: '/over/', label: 'Over deze site' },
+];
+---
+
+<header class="header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/" aria-label="BBQ Recepten, naar de homepage">
+      <span class="brand-mark">
+        <Icon name="flame" size={25} />
+      </span>
+      <span>
+        <strong>BBQ</strong>
+        <small>RECEPTEN</small>
+      </span>
+    </a>
+    <nav class="desktop-nav" aria-label="Hoofdnavigatie">
+      {links.map((link) => (
+        <a href={link.href} aria-current={current === link.href ? 'page' : undefined}>
+          {link.label}
+        </a>
+      ))}
+    </nav>
+    <a href="/recepten/" class="header-action">
+      Ontdek recepten
+      <Icon name="arrow" size={16} />
+    </a>
+    <details class="mobile-menu">
+      <summary aria-label="Open navigatie">
+        <Icon name="menu" size={25} />
+      </summary>
+      <nav aria-label="Mobiele navigatie">
+        {links.map((link) => (
+          <a href={link.href}>{link.label}</a>
+        ))}
+      </nav>
+    </details>
+  </div>
+</header>
+<style>
+  .header {
+    position: relative;
+    z-index: 10;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    min-height: 88px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    text-decoration: none;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+
+  .brand-mark {
+    display: grid;
+    place-items: center;
+    background: var(--forest);
+    color: #f5cc96;
+    width: 41px;
+    height: 41px;
+    border-radius: 11px;
+  }
+
+  .brand strong {
+    display: block;
+    font-family: var(--serif);
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.07em;
+  }
+
+  .brand small {
+    display: block;
+    margin-top: 3px;
+    font-size: 0.58rem;
+    letter-spacing: 0.3em;
+    font-weight: 800;
+  }
+
+  .desktop-nav {
+    display: flex;
+    gap: clamp(14px, 3vw, 36px);
+    align-items: center;
+  }
+
+  .desktop-nav a {
+    font-size: 0.9rem;
+    font-weight: 650;
+    text-decoration: none;
+    color: var(--muted);
+  }
+
+  .desktop-nav a:hover,
+  .desktop-nav a[aria-current='page'] {
+    color: var(--rust);
+  }
+
+  .header-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--rust);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+
+  .header-action:hover {
+    color: var(--rust-dark);
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  @media (max-width: 860px) {
+    .desktop-nav,
+    .header-action {
+      display: none;
+    }
+
+    .mobile-menu {
+      display: block;
+      position: relative;
+    }
+
+    .mobile-menu summary {
+      cursor: pointer;
+      padding: 8px;
+      list-style: none;
+    }
+
+    .mobile-menu summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .mobile-menu nav {
+      position: absolute;
+      right: 0;
+      top: calc(100% + 18px);
+      width: min(280px, 80vw);
+      background: var(--white);
+      border: 1px solid var(--line);
+      box-shadow: 0 16px 40px #262c2020;
+      padding: 10px;
+      border-radius: 9px;
+      display: grid;
+    }
+
+    .mobile-menu nav a {
+      padding: 13px;
+      text-decoration: none;
+      font-weight: 650;
+      border-radius: 5px;
+    }
+
+    .mobile-menu nav a:hover {
+      background: var(--soft);
+    }
+  }
+</style>

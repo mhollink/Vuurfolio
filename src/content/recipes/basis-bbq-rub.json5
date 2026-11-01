@@ -1,0 +1,24 @@
+{
+  title: 'Basis BBQ-rub',
+  description: 'Een eenvoudige allround kruidenmix voor varken, kip en groenten. Binnen vijf minuten klaar.',
+  category: 'sauzen-en-rubs',
+  publishedAt: '2026-09-20',
+  difficulty: 'Makkelijk',
+  prepMinutes: 5,
+  cookMinutes: 0,
+  servings: 8,
+  tags: ['rub', 'kruiden', 'voorraad'],
+  ingredients: [
+    '3 el paprikapoeder',
+    '2 el bruine basterdsuiker',
+    '1 el knoflookpoeder',
+    '1 el uienpoeder',
+    '2 tl gemalen zwarte peper',
+    '1 tl zout',
+  ],
+  steps: [
+    'Doe alle droge ingrediënten in een ruime kom en meng goed door elkaar.',
+    'Bewaar de rub luchtdicht op een koele en droge plaats.',
+    'Bestrooi het vlees of de groenten vlak voor het grillen met de rub.',
+  ],
+}
