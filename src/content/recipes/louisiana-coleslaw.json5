@@ -5,7 +5,7 @@
   description: 'Frisse, knapperige coleslaw met rode en witte kool, wortel en een romige dressing van grove mosterd, honing en appelciderazijn. Lekker bij burgers en BBQ-vlees.',
   category: 'bijgerechten',
   publishedAt: '2026-11-01',
-  featured: false,
+  featured: true,
   difficulty: 'Makkelijk',
   prepMinutes: 20,
   cookMinutes: 0,
