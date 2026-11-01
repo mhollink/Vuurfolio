@@ -16,7 +16,7 @@ const site = Astro.site ?? new URL('https://bbq.hollink.dev');
 
 <BaseLayout
   title={`BBQ recepten: ${category.title}`}
-  description={`Alle BBQ-recepten voor ${category.title.toLowerCase()}. ${category.description}`}
+  description={category.description}
   jsonLd={recipeListStructuredData(recipes, site)}
 >
   <section class="section wrap">
@@ -24,7 +24,10 @@ const site = Astro.site ?? new URL('https://bbq.hollink.dev');
       ← Alle recepten
     </a>
     <h1 class="page-title">{category.title}</h1>
-    <p class="lead">{category.description} Bekijk alle recepten in deze categorie.</p>
+    <div class="category-introduction">
+      <p class="lead">{category.description}</p>
+      <p>{category.introduction}</p>
+    </div>
     <CategorySelector active={category} />
     <RecipeBrowser recipes={recipes} />
   </section>
@@ -38,7 +41,19 @@ const site = Astro.site ?? new URL('https://bbq.hollink.dev');
     text-decoration: none;
   }
 
-  .lead {
-    margin: 20px 0 44px;
+  .category-introduction {
+    max-width: 790px;
+    margin: 20px 0 38px;
+  }
+
+  .category-introduction .lead {
+    max-width: none;
+    margin: 0 0 12px;
+  }
+
+  .category-introduction p:not(.lead) {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.8;
   }
 </style>

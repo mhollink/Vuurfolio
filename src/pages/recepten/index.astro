@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RecipeBrowser from '../../components/recipe/RecipeBrowser.astro';
-import { getRecipes } from '../../lib/recipes';
-import { recipeListStructuredData } from '../../lib/seo';
+import {getRecipes} from '../../lib/recipes';
+import {recipeListStructuredData} from '../../lib/seo';
 import CategorySelector from '../../components/catagory/CategorySelector.astro';
 const recipes = await getRecipes();
 const site = Astro.site ?? new URL('https://bbq.hollink.dev');
@@ -10,21 +10,41 @@ const site = Astro.site ?? new URL('https://bbq.hollink.dev');
 
 <BaseLayout
   title="Alle BBQ recepten"
-  description="Ontdek alle BBQ-recepten. Zoek tussen vlees, vis, bijgerechten, sauzen en rubs."
+  description="BBQ-recepten voor vlees, vis, bijgerechten en rubs. Van snelle grillgerechten tot low & slow, met duidelijke ingrediënten en bereidingsstappen."
   jsonLd={recipeListStructuredData(recipes, site)}
 >
   <section class="section wrap">
     <p class="eyebrow">Het receptenboek</p>
     <h1 class="page-title">Alle BBQ recepten</h1>
-    <p class="lead">
-      Van een snelle grillavond tot een dag rustig garen. Zoek een recept of kies een categorie.
-    </p>
-    <CategorySelector />
-    <RecipeBrowser recipes={recipes} searchable />
+    <div class="introduction">
+      <p class="lead">
+        Goed eten begint bij het vuur. Of je nu zin hebt in een snelle grillavond of uitgebreid de
+        tijd neemt voor een mooi stuk vlees, hier vind je genoeg inspiratie om de BBQ aan te steken.
+      </p>
+      <p>
+        Blader door de categorieën of zoek op een ingrediënt, bereiding of gerecht. Elk recept geeft
+        je een duidelijk startpunt, met ingrediënten, tijden en stappen die je direct naast de BBQ
+        kunt gebruiken. Zonder poespas, maar met ruimte om er je eigen draai aan te geven.
+      </p>
+    </div>
+    <CategorySelector/>
+    <RecipeBrowser recipes={recipes} searchable/>
   </section>
 </BaseLayout>
 <style>
-  .lead {
-    margin-bottom: 28px;
+  .introduction {
+    max-width: 790px;
+    margin-bottom: 32px;
+  }
+
+  .introduction .lead {
+    max-width: none;
+    margin-bottom: 12px;
+  }
+
+  .introduction p:not(.lead) {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.8;
   }
 </style>
