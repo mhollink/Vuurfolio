@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RecipeBrowser from '../../components/recipe/RecipeBrowser.astro';
-import {getRecipes} from '../../lib/recipes';
-import {recipeListStructuredData} from '../../lib/seo';
+import { getRecipes } from '../../lib/recipes';
+import { recipeListStructuredData } from '../../lib/seo';
 import CategorySelector from '../../components/catagory/CategorySelector.astro';
 const recipes = await getRecipes();
 const site = Astro.site ?? new URL('https://bbq.hollink.dev');
@@ -27,8 +27,8 @@ const site = Astro.site ?? new URL('https://bbq.hollink.dev');
         kunt gebruiken. Zonder poespas, maar met ruimte om er je eigen draai aan te geven.
       </p>
     </div>
-    <CategorySelector/>
-    <RecipeBrowser recipes={recipes} searchable/>
+    <CategorySelector />
+    <RecipeBrowser recipes={recipes} searchable />
   </section>
 </BaseLayout>
 <style>

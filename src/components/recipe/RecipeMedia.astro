@@ -16,11 +16,13 @@ const { title, category, image, eager = false } = Astro.props;
     <img src={image} alt={title} loading={eager ? 'eager' : 'lazy'} decoding="async" />
   ) : (
     <div class="fallback" aria-hidden="true">
-      <div class="ring">
-        <span class="grain grain-one"></span>
-        <span class="grain grain-two"></span>
-        <span class="grain grain-three"></span>
-      </div>
+      <img
+        class="silhouette"
+        src={`/images/categories/${category}.svg`}
+        alt=""
+        loading={eager ? 'eager' : 'lazy'}
+        decoding="async"
+      />
       <span class="category-stamp">{getCategory(category).title}</span>
     </div>
   )}
@@ -65,52 +67,19 @@ const { title, category, image, eager = false } = Astro.props;
     );
   }
 
-  .ring {
-    position: relative;
-    display: grid;
-    place-items: center;
-    width: 53%;
-    aspect-ratio: 1;
-    border: 12px solid var(--white);
-    box-shadow:
-      0 0 0 2px #70412a36,
-      inset 0 0 0 2px #70412a33,
-      0 12px 35px #32180f33;
-    border-radius: 50%;
-    background: radial-gradient(
-      circle,
-      #874428 0 22%,
-      #d9843f 23% 37%,
-      #553223 38% 43%,
-      #e5a64d 44% 66%,
-      #f4d29a 67%
-    );
-    transform: rotate(-17deg);
-  }
-
-  .grain {
+  .silhouette {
     position: absolute;
-    width: 27%;
-    height: 6%;
-    border-radius: 50%;
-    background: #55322399;
-    transform: rotate(-26deg);
-  }
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-  .grain-one {
-    top: 34%;
-    left: 18%;
-  }
+    width: 78%;
+    max-width: 420px;
+    height: 72%;
 
-  .grain-two {
-    top: 61%;
-    left: 49%;
-    transform: rotate(33deg);
-  }
-
-  .grain-three {
-    top: 26%;
-    right: 14%;
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0 10px 20px #32180f25);
   }
 
   .category-stamp {
@@ -130,26 +99,37 @@ const { title, category, image, eager = false } = Astro.props;
 
   [data-category='rund'] {
     --media-light: #ddb18a;
-    --media-dark: #895035;
+    --media-dark: #8a4e34;
+    --silhouette-color: #4f2617;
   }
 
   [data-category='vis'] {
     --media-light: #e0d1bb;
     --media-dark: #938070;
+    --silhouette-color: #4f3424;
   }
 
   [data-category='bijgerechten'] {
-    --media-light: #ebc58d;
-    --media-dark: #b0814d;
+    --media-light: #e4be84;
+    --media-dark: #ac7a44;
+    --silhouette-color: #5a331f;
   }
 
   [data-category='kip'] {
     --media-light: #f5d49b;
     --media-dark: #bd7c3d;
+    --silhouette-color: #5a2d1a;
   }
 
   [data-category='sauzen-en-rubs'] {
     --media-light: #e9b577;
     --media-dark: #854a30;
+    --silhouette-color: #522818;
+  }
+
+  [data-category='varken'] {
+    --media-light: #e3b28f;
+    --media-dark: #9d5d43;
+    --silhouette-color: #572b1a;
   }
 </style>
