@@ -1,0 +1,30 @@
+/* Vuur & Rook: semantic colors, with compatibility aliases for existing components. */
+:root {
+  /* Brand */
+  --charcoal: #231c19;
+  --charcoal-soft: #38281f;
+  --ember: #a63c22;
+  --ember-dark: #7f2c1a;
+  --flame: #ffa16a;
+  --amber: #f0b454;
+  --amber-hover: #ffd087;
+  --smoke: #d9c5b2;
+
+  /* Light reading surfaces */
+  --ink: #29221d;
+  --muted: #65574d;
+  --paper: #f3ece1;
+  --white: #fff9ef;
+  --soft: #e9ddcf;
+  --line: #d8c7b5;
+
+  /* Decorative rings on dark surfaces */
+  --hero-ring: #f0b45433;
+  --hero-halo-inner: #f0b45418;
+  --hero-halo-outer: #f0b4540a;
+
+  /* Existing component aliases: migrate gradually, without a broad refactor. */
+  --rust: var(--ember);
+  --rust-dark: var(--ember-dark);
+  --forest: var(--charcoal);
+}

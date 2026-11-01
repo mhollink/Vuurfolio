@@ -61,7 +61,8 @@ const { recipe } = Astro.props;
   .hero {
     position: relative;
     overflow: hidden;
-    background: #f0ece1;
+    background: radial-gradient(ellipse at 75% 40%, var(--charcoal-soft), var(--charcoal) 75%);
+    color: var(--white);
   }
 
   .hero::before {
@@ -72,10 +73,10 @@ const { recipe } = Astro.props;
     width: 630px;
     height: 630px;
     border-radius: 50%;
-    border: 1px solid #ded6c8;
+    border: 1px solid var(--hero-ring);
     box-shadow:
-      0 0 0 80px #e8e1d434,
-      0 0 0 180px #ded6c820;
+      0 0 0 80px var(--hero-halo-inner),
+      0 0 0 180px var(--hero-halo-outer);
     pointer-events: none;
   }
 
@@ -97,13 +98,14 @@ const { recipe } = Astro.props;
     display: inline-flex;
     align-items: center;
     gap: 11px;
+    color: var(--amber);
   }
 
   .dot {
     display: inline-block;
     width: 8px;
     height: 8px;
-    background: var(--rust);
+    background: var(--amber);
     border-radius: 50%;
   }
 
@@ -113,12 +115,24 @@ const { recipe } = Astro.props;
   }
 
   h1 em {
-    color: var(--rust);
+    color: var(--flame);
     font-weight: 500;
   }
 
   .lead {
     margin: 0;
+    color: var(--smoke);
+  }
+
+  .hero :global(.button) {
+    background: var(--amber);
+    border-color: var(--amber);
+    color: var(--charcoal);
+  }
+
+  .hero :global(.button:hover) {
+    background: var(--amber-hover);
+    border-color: var(--amber-hover);
   }
 
   .actions {
@@ -130,8 +144,8 @@ const { recipe } = Astro.props;
   }
 
   .text-link {
-    color: var(--ink);
-    text-decoration-color: var(--rust);
+    color: var(--white);
+    text-decoration-color: var(--amber);
     text-underline-offset: 5px;
     font-size: 0.91rem;
     font-weight: 700;
@@ -143,17 +157,18 @@ const { recipe } = Astro.props;
     gap: 7px;
     margin-top: 55px;
     font-size: 0.78rem;
-    color: var(--muted);
+    color: var(--smoke);
   }
 
   .spotlight {
     display: block;
     position: relative;
-    background: #fff;
+    background: var(--white);
+    color: var(--ink);
     text-decoration: none;
-    border: 8px solid #fff;
+    border: 8px solid var(--white);
     border-radius: 9px;
-    box-shadow: 0 24px 70px #4c3b281c;
+    box-shadow: 0 24px 70px #100c0a66;
     transform: rotate(1deg);
     transition: transform 0.2s;
   }

@@ -30,7 +30,7 @@ const { title, category, image, eager = false } = Astro.props;
     position: relative;
     width: 100%;
     aspect-ratio: 4 / 3;
-    background: #e5dfd1;
+    background: var(--soft);
     overflow: hidden;
   }
 
@@ -47,8 +47,8 @@ const { title, category, image, eager = false } = Astro.props;
     place-items: center;
     overflow: hidden;
     background:
-      radial-gradient(circle at 18% 15%, #ffffff66 0, transparent 42%),
-      linear-gradient(135deg, #e9dcc2, #d7c39f);
+      radial-gradient(circle at 18% 15%, #fff9ef66 0, transparent 42%),
+      linear-gradient(135deg, var(--media-light, #f0ce95), var(--media-dark, #ad6743));
   }
 
   .fallback::before {
@@ -60,7 +60,7 @@ const { title, category, image, eager = false } = Astro.props;
       120deg,
       transparent 0,
       transparent 22px,
-      #786b51 23px,
+      #613824 23px,
       transparent 24px
     );
   }
@@ -71,19 +71,19 @@ const { title, category, image, eager = false } = Astro.props;
     place-items: center;
     width: 53%;
     aspect-ratio: 1;
-    border: 12px solid #f8f0df;
+    border: 12px solid var(--white);
     box-shadow:
-      0 0 0 2px #9f8d6b36,
-      inset 0 0 0 2px #917d5a33,
-      0 12px 35px #57432c20;
+      0 0 0 2px #70412a36,
+      inset 0 0 0 2px #70412a33,
+      0 12px 35px #32180f33;
     border-radius: 50%;
     background: radial-gradient(
       circle,
-      #b86d46 0 22%,
-      #e4b46c 23% 37%,
-      #8a6b43 38% 43%,
-      #d8a45e 44% 66%,
-      #f0d59d 67%
+      #874428 0 22%,
+      #d9843f 23% 37%,
+      #553223 38% 43%,
+      #e5a64d 44% 66%,
+      #f4d29a 67%
     );
     transform: rotate(-17deg);
   }
@@ -93,7 +93,7 @@ const { title, category, image, eager = false } = Astro.props;
     width: 27%;
     height: 6%;
     border-radius: 50%;
-    background: #633d2d77;
+    background: #55322399;
     transform: rotate(-26deg);
   }
 
@@ -118,9 +118,9 @@ const { title, category, image, eager = false } = Astro.props;
     bottom: 14px;
     left: 14px;
     padding: 7px 12px;
-    background: #fff9eac9;
-    color: #554d3a;
-    border: 1px solid #ffffffa8;
+    background: #fff9efdf;
+    color: var(--ink);
+    border: 1px solid #fff9efa8;
     border-radius: 4px;
     font-size: 0.7rem;
     font-weight: 800;
@@ -128,23 +128,28 @@ const { title, category, image, eager = false } = Astro.props;
     text-transform: uppercase;
   }
 
-  [data-category='rund'] .fallback {
-    filter: sepia(0.1) saturate(1.2);
+  [data-category='rund'] {
+    --media-light: #ddb18a;
+    --media-dark: #895035;
   }
 
-  [data-category='vis'] .fallback {
-    filter: hue-rotate(45deg) saturate(0.65);
+  [data-category='vis'] {
+    --media-light: #e0d1bb;
+    --media-dark: #938070;
   }
 
-  [data-category='bijgerechten'] .fallback {
-    filter: hue-rotate(25deg) saturate(0.9);
+  [data-category='bijgerechten'] {
+    --media-light: #ebc58d;
+    --media-dark: #b0814d;
   }
 
-  [data-category='kip'] .fallback {
-    filter: saturate(0.8) brightness(1.1);
+  [data-category='kip'] {
+    --media-light: #f5d49b;
+    --media-dark: #bd7c3d;
   }
 
-  [data-category='sauzen-en-rubs'] .fallback {
-    filter: sepia(0.2) saturate(1.35) brightness(0.9);
+  [data-category='sauzen-en-rubs'] {
+    --media-light: #e9b577;
+    --media-dark: #854a30;
   }
 </style>

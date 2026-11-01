@@ -6,15 +6,6 @@
     -apple-system,
     BlinkMacSystemFont,
     sans-serif;
-  --ink: #242821;
-  --muted: #667064;
-  --paper: #f7f5ef;
-  --white: #fffefb;
-  --soft: #eeeae0;
-  --line: #dfded3;
-  --rust: #a64f2b;
-  --rust-dark: #7f361d;
-  --forest: #34463a;
   --serif: Georgia, 'Times New Roman', serif;
   background: var(--paper);
   color: var(--ink);
@@ -55,7 +46,7 @@ button {
   outline-offset: 4px;
 }
 ::selection {
-  background: #e1b997;
+  background: var(--amber);
   color: var(--ink);
 }
 
@@ -103,7 +94,7 @@ button {
   border: 1px solid var(--rust);
   padding: 13px 20px;
   background: var(--rust);
-  color: white;
+  color: var(--white);
   border-radius: 7px;
   font-weight: 700;
   text-decoration: none;

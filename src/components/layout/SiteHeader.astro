@@ -46,8 +46,9 @@ const links = [
   .header {
     position: relative;
     z-index: 10;
-    background: var(--paper);
-    border-bottom: 1px solid var(--line);
+    background: var(--charcoal);
+    color: var(--white);
+    border-bottom: 1px solid var(--hero-ring);
   }
 
   .header-inner {
@@ -70,8 +71,8 @@ const links = [
   .brand-mark {
     display: grid;
     place-items: center;
-    background: var(--forest);
-    color: #f5cc96;
+    background: var(--amber);
+    color: var(--charcoal);
     width: 41px;
     height: 41px;
     border-radius: 11px;
@@ -103,19 +104,19 @@ const links = [
     font-size: 0.9rem;
     font-weight: 650;
     text-decoration: none;
-    color: var(--muted);
+    color: var(--smoke);
   }
 
   .desktop-nav a:hover,
   .desktop-nav a[aria-current='page'] {
-    color: var(--rust);
+    color: var(--amber);
   }
 
   .header-action {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    color: var(--rust);
+    color: var(--amber);
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 800;
@@ -123,7 +124,7 @@ const links = [
   }
 
   .header-action:hover {
-    color: var(--rust-dark);
+    color: var(--flame);
   }
 
   .mobile-menu {
@@ -157,8 +158,9 @@ const links = [
       top: calc(100% + 18px);
       width: min(280px, 80vw);
       background: var(--white);
+      color: var(--ink);
       border: 1px solid var(--line);
-      box-shadow: 0 16px 40px #262c2020;
+      box-shadow: 0 16px 40px #100c0a40;
       padding: 10px;
       border-radius: 9px;
       display: grid;
