@@ -1,0 +1,47 @@
+{
+  title: 'Zalm met zelfgemaakte pesto en tomaatjes',
+  description: 'Zalm van de BBQ met verse basilicumpesto. Afgedekt gegaard met cherrytomaatjes, zodat de zalm sappig blijft en de tomaatjes zacht poffen.',
+  category: 'vis',
+  publishedAt: '2026-11-01',
+  featured: true,
+  difficulty: 'Makkelijk',
+  prepMinutes: 20,
+  cookMinutes: 25,
+  servings: 4,
+  temperatureC: 180,
+  tags: ['zalm', 'pesto', 'cherrytomaatjes', 'indirect garen'],
+
+  ingredients: [
+    {
+      title: 'Voor de zelfgemaakte pesto',
+      items: [
+        '30 g verse basilicumblaadjes',
+        '40 g Grana Padano, geraspt',
+        '30 g pijnboompitten',
+        '75 ml olijfolie',
+      ],
+    },
+    {
+      title: 'Voor de zalm',
+      items: [
+        '4 zalmmoten met huid (ca. 150–200 g per stuk)',
+        '300 g cherrytomaatjes',
+        '20 g pijnboompitten',
+        'Zout en peper naar smaak',
+      ],
+    },
+    {
+      title: 'Om te serveren',
+      items: ['Stokbrood of penne naar keuze'],
+    },
+  ],
+
+  steps: [
+    'Verwarm de BBQ voor op ongeveer 180 °C en zorg voor een indirecte grillzone.',
+    'Maak de pesto door de basilicum, Grana Padano, 30 g pijnboompitten en olijfolie fijn te malen of te vijzelen. Voeg indien nodig een scheutje extra olijfolie toe om de pesto smeerbaar te maken. Breng eventueel op smaak met wat peper en zout.',
+    'Verdeel een dun laagje pesto over de bodem van een aluminium schaal. Leg de zalmmoten met de huid naar beneden op de pesto en schep er nog wat pesto overheen.',
+    'Verdeel de cherrytomaatjes rondom de zalm en strooi de overige 20 g pijnboompitten erover. Dek de schaal goed af met aluminiumfolie, zodat de stoom tijdens het garen in de schaal blijft.',
+    'Zet de schaal op het indirecte gedeelte van de BBQ. Laat ongeveer 20 tot 25 minuten garen, afhankelijk van de dikte van de zalm. Controleer of de tomaatjes zacht en gepoft zijn en de zalm gaar is. Voor volledig gegaarde zalm kun je een kerntemperatuur van 63 °C aanhouden.',
+    'Haal de schaal van de BBQ en verwijder voorzichtig de folie; er kan hete stoom vrijkomen. Serveer de zalm met de tomaatjes en het vocht uit de schaal, samen met stokbrood of gekookte penne.',
+  ],
+}

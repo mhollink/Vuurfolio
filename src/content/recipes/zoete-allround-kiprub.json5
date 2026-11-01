@@ -1,0 +1,37 @@
+{
+  title: 'Zoete allround kiprub',
+  description: 'Een zoete, kruidige BBQ-rub voor kip met paprikapoeder, citroenpeper en een vleugje cayenne. Lekker op kippenvleugels, drumsticks en kippendijen.',
+  category: 'sauzen-en-rubs',
+  publishedAt: '2026-11-01',
+  featured: false,
+  difficulty: 'Makkelijk',
+  prepMinutes: 10,
+  cookMinutes: 0,
+  servings: 20,
+  tags: ['kip', 'rub', 'kruidenmix', 'zoet', 'zelfgemaakt'],
+  ingredients: [
+    {
+      items: [
+        '60 g paprikapoeder',
+        '60 g citroenpeper',
+        '40 g kristalsuiker',
+        '20 g donkerbruine basterdsuiker',
+        '20 g knoflookpoeder',
+        '20 g uienpoeder',
+        '1 tl cayennepeper',
+        '1 el gedroogde basilicum',
+        '1 el gedroogde tijm',
+        '1 el gedroogde rozemarijn',
+        '1 el versgemalen zwarte peper',
+        'Zout naar smaak',
+      ],
+    },
+  ],
+  steps: [
+    'Doe het paprikapoeder, de citroenpeper, kristalsuiker, basterdsuiker, knoflookpoeder en uienpoeder in een ruime kom.',
+    'Voeg de cayennepeper, basilicum, tijm, rozemarijn en versgemalen zwarte peper toe. Wrijf de rozemarijn eventueel wat fijner, zodat de kruiden gelijkmatig verdeeld worden.',
+    'Meng alles zorgvuldig door elkaar en proef een klein beetje om te bepalen of er nog zout nodig is. Let op: sommige soorten citroenpeper bevatten al zout.',
+    'Bewaar de kruidenmix in een schone, droge en luchtdichte pot, uit de buurt van warmte en direct zonlicht.',
+    'Dep de kip droog en verdeel de rub gelijkmatig over het vlees voordat je het op de BBQ legt. Let bij directe hitte op dat de suiker niet verbrandt.',
+  ],
+}

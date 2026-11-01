@@ -1,0 +1,49 @@
+{
+  title: 'TexMex burger met guacamole en Doritos',
+  description: 'Een sappige runderburger van de BBQ op een geroosterd briochebroodje, met zelfgemaakte guacamole, zure room en knapperige Doritos Nacho Cheese.',
+  category: 'rund',
+  publishedAt: '2026-11-01',
+  featured: true,
+  difficulty: 'Makkelijk',
+  prepMinutes: 20,
+  cookMinutes: 15,
+  servings: 4,
+  temperatureC: 225,
+  tags: ['burger', 'texmex', 'guacamole', 'direct grillen'],
+
+  ingredients: [
+    {
+      title: 'Voor de burgers',
+      items: [
+        '600 g rundergehakt (bij voorkeur met circa 20% vet)',
+        '1 tl knoflookpoeder',
+        '1 tl zout',
+        '1/2 tl versgemalen zwarte peper',
+        '4 brioche hamburgerbroodjes',
+      ],
+    },
+    {
+      title: 'Voor de guacamole',
+      items: [
+        '2 rijpe avocado’s',
+        '1 limoen',
+        '1/2 rode ui',
+        '1 kleine tomaat',
+        'Zout en peper naar smaak',
+      ],
+    },
+    {
+      title: 'Voor de toppings',
+      items: ['4 el zure room', '60 g Doritos Nacho Cheese'],
+    },
+  ],
+
+  steps: [
+    'Maak eerst de guacamole. Halveer de avocado’s, verwijder de pit en prak het vruchtvlees met het sap van de limoen. Snipper de rode ui fijn, snijd de tomaat in kleine blokjes en meng beide erdoor. Breng op smaak met zout en peper.',
+    'Meng het rundergehakt voorzichtig met knoflookpoeder, zout en peper. Verdeel in vier porties en vorm er hamburgers van. Druk ze niet te stevig samen, zodat ze sappig blijven.',
+    'Verwarm de BBQ voor op ongeveer 225 °C met een directe grillzone. Zorg bij voorkeur ook voor een plek met indirecte hitte om de burgers zo nodig verder te garen.',
+    'Grill de hamburgers enkele minuten per kant totdat ze mooi bruin zijn. De exacte tijd hangt af van de dikte. Controleer voor veilig gegaard gehakt een kerntemperatuur van 71 °C.',
+    'Snijd de briochebroodjes open en rooster de snijkanten kort op de BBQ totdat ze licht goudbruin zijn. Let op: brioche kan door de suiker snel verbranden.',
+    'Beleg de onderste helft van elk broodje met een hamburger. Voeg een eetlepel zure room, een flinke lepel guacamole en een handje Doritos Nacho Cheese toe. Leg de bovenste helft erop en serveer direct, zodat de chips lekker knapperig blijven.',
+  ],
+}

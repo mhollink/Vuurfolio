@@ -1,0 +1,44 @@
+{
+  // Gebaseerd op de Louisiana coleslaw van Allerhande:
+  // https://www.ah.nl/allerhande/recept/R-R1188711/louisiana-coleslaw
+  title: 'Louisiana coleslaw',
+  description: 'Frisse, knapperige coleslaw met rode en witte kool, wortel en een romige dressing van grove mosterd, honing en appelciderazijn. Lekker bij burgers en BBQ-vlees.',
+  category: 'bijgerechten',
+  publishedAt: '2026-11-01',
+  featured: false,
+  difficulty: 'Makkelijk',
+  prepMinutes: 20,
+  cookMinutes: 0,
+  servings: 8,
+  tags: ['coleslaw', 'salade', 'amerikaans', 'koud bijgerecht', 'zonder bbq'],
+  ingredients: [
+    {
+      title: 'Voor de coleslaw',
+      items: [
+        '300 g rode kool',
+        '300 g witte kool',
+        '1 rode ui',
+        '1 winterpeen',
+        '1 el verse platte peterselie',
+      ],
+    },
+    {
+      title: 'Voor de dressing',
+      items: [
+        '6 el mayonaise',
+        '4 el appelciderazijn',
+        '2 el grove Zaanse mosterd',
+        '1 tl mosterdpoeder',
+        '2 el vloeibare honing',
+        'Zout en versgemalen peper naar smaak',
+      ],
+    },
+  ],
+  steps: [
+    'Roer de mayonaise, appelciderazijn, grove mosterd, mosterdpoeder en honing in een kom door elkaar. Proef en breng op smaak met zout en peper.',
+    'Snijd de rode en witte kool in zo dun mogelijke reepjes. Snipper de rode ui, rasp de winterpeen grof of snijd hem in fijne reepjes en hak de peterselie.',
+    'Doe alle groenten en de peterselie in een grote schaal en meng ze goed door elkaar, zodat de kleuren mooi verdeeld zijn.',
+    'Schep de dressing door de groenten vlak voordat je gaat eten. Wil je de salade voorbereiden, bewaar de groenten en dressing dan apart en afgedekt in de koelkast.',
+    'Serveer de coleslaw koud, bijvoorbeeld bij pulled pork, burgers of andere gerechten van de BBQ.',
+  ],
+}

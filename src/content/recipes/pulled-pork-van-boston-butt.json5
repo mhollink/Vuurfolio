@@ -1,0 +1,42 @@
+{
+  title: 'Pulled pork van Boston butt',
+  description: 'Langzaam gerookte Boston butt met een stevige bark en sappig vlees dat na uren op de BBQ moeiteloos uit elkaar valt. Heerlijk op een broodje met coleslaw.',
+  category: 'varken',
+  publishedAt: '2026-11-01',
+  featured: false,
+  difficulty: 'Gemiddeld',
+  prepMinutes: 25,
+  cookMinutes: 720,
+  servings: 10,
+  temperatureC: 115,
+  tags: ['pulled pork', 'Boston butt', 'low & slow', 'rookhout'],
+  ingredients: [
+    {
+      title: 'Voor de Boston butt',
+      items: [
+        '3 kg Boston butt (varkensschouder, bij voorkeur met bot)',
+        '60 g BBQ-rub voor varkensvlees',
+        '2 el mosterd (optioneel, als binder)',
+        '2 à 3 chunks appel- of kersenrookhout',
+      ],
+    },
+    {
+      title: 'Voor het inpakken en serveren',
+      items: [
+        '100 ml appelsap (optioneel, bij gebruik van aluminiumfolie)',
+        'BBQ-saus naar smaak',
+        'Zachte broodjes en coleslaw, om te serveren',
+      ],
+    },
+  ],
+  steps: [
+    'Dep de Boston butt droog en verwijder eventueel losse stukken vlees en overtollige harde vetdelen. Bestrijk het vlees desgewenst dun met mosterd en verdeel de BBQ-rub gelijkmatig over alle kanten.',
+    'Bereid de BBQ voor op indirect garen bij ongeveer 115 °C. Voeg het rookhout toe en plaats eventueel een lekbak onder het rooster.',
+    'Leg de Boston butt op het rooster en steek een kernthermometer in het dikste deel van het vlees, zonder het bot te raken. Sluit het deksel en laat rustig roken.',
+    'Laat het vlees garen tot de buitenkant een stevige, donkere bark heeft. Rond een kerntemperatuur van 70 tot 75 °C kan de temperatuur langere tijd nauwelijks stijgen: dit is de stall.',
+    'Pak het vlees zodra de bark stevig is strak in aluminiumfolie of butcher paper. Gebruik je aluminiumfolie, dan kun je ongeveer 100 ml appelsap toevoegen. Je kunt het vlees ook onverpakt laten voor een stevigere bark, maar reken dan op een langere bereiding.',
+    'Gaar verder tot ongeveer 92 tot 96 °C kerntemperatuur. Controleer met een prikthermometer op meerdere plekken of deze vrijwel zonder weerstand door het vlees glijdt. De malsheid is belangrijker dan de exacte temperatuur.',
+    'Haal de Boston butt van de BBQ, laat kort wat stoom ontsnappen en pak weer in. Laat minstens 60 minuten warm rusten voordat je het vlees uit elkaar trekt. Bewaar eventueel vrijgekomen vleessappen.',
+    'Verwijder het bot en trek het vlees met twee vorken of vleesklauwen uit elkaar. Meng er wat van de opgevangen vleessappen door en voeg eventueel BBQ-saus toe. Serveer op zachte broodjes met coleslaw.',
+  ],
+}

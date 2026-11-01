@@ -1,0 +1,29 @@
+{
+  title: 'Zelfgemaakte knoflooksaus',
+  description: 'Een eenvoudige, romige knoflooksaus met Griekse yoghurt, mayonaise en een klein beetje suiker. Heerlijk bij kapsalon, kip en friet.',
+  category: 'sauzen-en-rubs',
+  publishedAt: '2026-11-01',
+  featured: false,
+  difficulty: 'Makkelijk',
+  prepMinutes: 5,
+  cookMinutes: 0,
+  servings: 2,
+  tags: ['knoflooksaus', 'saus', 'kapsalon', 'zonder koken'],
+  ingredients: [
+    {
+      items: [
+        '3 volle el Griekse yoghurt',
+        '1 el mayonaise',
+        '1 tl knoflookpuree',
+        '1 tl kristalsuiker',
+        'Zout en versgemalen zwarte peper naar smaak',
+      ],
+    },
+  ],
+  steps: [
+    'Doe de Griekse yoghurt en mayonaise in een kommetje en roer tot een gladde basis.',
+    'Voeg de knoflookpuree en kristalsuiker toe en meng goed door elkaar.',
+    'Breng de saus op smaak met zout en versgemalen zwarte peper. Proef en pas de smaak eventueel aan.',
+    'Serveer de knoflooksaus direct, bijvoorbeeld over een kapsalon of bij kip en friet. Bewaar tot het serveren in de koelkast.',
+  ],
+}

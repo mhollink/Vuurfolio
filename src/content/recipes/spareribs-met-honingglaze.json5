@@ -1,0 +1,41 @@
+{
+  title: 'Spareribs met honing-BBQ-glaze',
+  description: 'Malse spareribs, rustig gegaard op de BBQ en afgewerkt met een kleverige, zoete glaze van honing en BBQ-saus.',
+  category: 'varken',
+  publishedAt: '2026-11-01',
+  featured: false,
+  difficulty: 'Gemiddeld',
+  prepMinutes: 25,
+  cookMinutes: 300,
+  servings: 4,
+  temperatureC: 120,
+  tags: ['varken', 'spareribs', 'low & slow', 'honingglaze'],
+  ingredients: [
+    {
+      title: 'Voor de spareribs',
+      items: [
+        '2 strengen spareribs (samen ongeveer 1,5 tot 2 kg)',
+        '2 el paprikapoeder',
+        '1 el bruine basterdsuiker',
+        '1 tl knoflookpoeder',
+        '1 tl uienpoeder',
+        '2 tl zout',
+        '1 tl versgemalen zwarte peper',
+        '100 ml appelsap',
+        'Een klein stukje appel- of kersenrookhout (optioneel)',
+      ],
+    },
+    {
+      title: 'Voor de honing-BBQ-glaze',
+      items: ['120 ml BBQ-saus naar keuze', '2 el honing', '1 el appelciderazijn'],
+    },
+  ],
+  steps: [
+    'Verwijder indien nodig het vlies aan de botzijde van de spareribs en dep het vlees droog. Meng paprikapoeder, basterdsuiker, knoflookpoeder, uienpoeder, zout en peper tot een rub. Wrijf de spareribs rondom in.',
+    'Verwarm de BBQ voor op ongeveer 120 °C en richt hem in voor indirecte bereiding. Voeg eventueel een klein stukje rookhout toe voor een subtiele rooksmaak.',
+    'Leg de spareribs indirect op het rooster, met de vleeskant naar boven. Gaar ze ongeveer 2,5 tot 3 uur met gesloten deksel, totdat de buitenkant mooi gekleurd is en de kruidenlaag stevig aanvoelt.',
+    'Leg iedere streng op een ruim stuk aluminiumfolie, voeg een scheut van het appelsap toe en vouw de folie goed dicht. Gaar nog ongeveer 1,5 tot 2 uur, totdat het vlees mals wordt. Controleer voorzichtig: de hete stoom uit de folie kan brandwonden veroorzaken.',
+    'Meng de BBQ-saus, honing en appelciderazijn. Haal de spareribs voorzichtig uit de folie en bestrijk ze met de glaze. Leg ze nog 20 tot 30 minuten indirect terug op de BBQ, zodat de saus kan hechten zonder te verbranden.',
+    'Controleer of het vlees mals is: een prikker moet gemakkelijk tussen de botten glijden. Laat de spareribs ongeveer 10 minuten rusten, snijd ze tussen de botten door en serveer.',
+  ],
+}

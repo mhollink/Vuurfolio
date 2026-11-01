@@ -1,0 +1,29 @@
+{
+  title: 'Zelfgemaakte satésaus met pindakaas',
+  description: 'Een snelle, romige satésaus van Calvé pindakaas, ketjap, sambal en bruine suiker. Lekker bij kipsaté, gegrilde kip en friet.',
+  category: 'sauzen-en-rubs',
+  publishedAt: '2026-11-01',
+  featured: false,
+  difficulty: 'Makkelijk',
+  prepMinutes: 5,
+  cookMinutes: 10,
+  servings: 4,
+  tags: ['satésaus', 'pindasaus', 'pindakaas', 'ketjap', 'saus'],
+  ingredients: [
+    {
+      items: [
+        '100 g Calvé pindakaas',
+        '2 el ketjap manis',
+        '1 tl sambal oelek',
+        '1 tl bruine basterdsuiker',
+        '150 ml water',
+      ],
+    },
+  ],
+  steps: [
+    'Doe de pindakaas, ketjap manis, sambal, bruine basterdsuiker en het water in een steelpannetje.',
+    'Verwarm het geheel op laag vuur en blijf roeren totdat de pindakaas is opgelost en een gladde saus ontstaat.',
+    'Laat de saus rustig warm worden zonder hard te koken. Voeg eventueel een klein beetje extra water toe als hij te dik wordt.',
+    'Proef de satésaus en pas naar smaak de hoeveelheid ketjap of sambal aan. Serveer warm bij kipsaté, gegrilde kip of friet.',
+  ],
+}

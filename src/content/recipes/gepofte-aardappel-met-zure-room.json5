@@ -1,0 +1,40 @@
+{
+  title: 'Gepofte aardappel met zure room',
+  description: 'Een zachte gepofte aardappel van de BBQ, gevuld met frisse zure room en bieslook. Eenvoudig, stevig en lekker naast gegrild vlees.',
+  category: 'bijgerechten',
+  publishedAt: '2026-11-01',
+  featured: false,
+  difficulty: 'Makkelijk',
+  prepMinutes: 10,
+  cookMinutes: 65,
+  servings: 4,
+  temperatureC: 200,
+  tags: ['aardappel', 'indirect grillen', 'vegetarisch', 'klassiek bijgerecht'],
+  ingredients: [
+    {
+      title: 'Voor de aardappelen',
+      items: [
+        '4 grote kruimige aardappelen (ongeveer 250 g per stuk)',
+        '1 el olijfolie',
+        'Grof zeezout naar smaak',
+      ],
+    },
+    {
+      title: 'Voor de topping',
+      items: [
+        '125 g zure room',
+        '2 el fijngesneden verse bieslook',
+        'Versgemalen zwarte peper naar smaak',
+        'Zout naar smaak',
+      ],
+    },
+  ],
+  steps: [
+    'Verwarm de BBQ voor op ongeveer 200 °C en richt hem in voor indirecte bereiding.',
+    'Boen de aardappelen goed schoon en droog ze af. Prik de schil op enkele plekken in met een vork en wrijf de aardappelen in met olijfolie en wat grof zeezout.',
+    'Wikkel iedere aardappel afzonderlijk in aluminiumfolie en leg ze op het indirecte gedeelte van het rooster. Sluit het deksel.',
+    'Pof de aardappelen ongeveer 60 tot 75 minuten, afhankelijk van hun formaat. Ze zijn klaar als je er zonder weerstand een satéprikker of mes in kunt steken.',
+    'Meng ondertussen de zure room met het grootste deel van de bieslook, peper en een beetje zout.',
+    'Haal de aardappelen voorzichtig uit de folie, snijd ze kruislings open en druk ze een beetje uit elkaar. Schep er een royale lepel zure room op en strooi de resterende bieslook erover.',
+  ],
+}

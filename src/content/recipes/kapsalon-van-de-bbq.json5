@@ -1,0 +1,51 @@
+{
+  title: 'Kapsalon van de BBQ met kip van het spit',
+  description: 'Een goedgevulde kapsalon met shoarmakip van het spit, knapperige friet, gesmolten kaas, frisse groenten en zelfgemaakte knoflooksaus.',
+  category: 'kip',
+  publishedAt: '2026-11-01',
+  featured: true,
+  difficulty: 'Gemiddeld',
+  prepMinutes: 25,
+  cookMinutes: 60,
+  servings: 2,
+  temperatureC: 225,
+  tags: ['kapsalon', 'kip', 'shoarma', 'spit', 'comfortfood'],
+
+  ingredients: [
+    {
+      title: 'Voor de kapsalon',
+      items: [
+        '600 g kippendijfilet',
+        'Shoarmakruiden naar smaak',
+        '400 g friet',
+        '200 g geraspte kaas',
+        '1/2 krop ijsbergsla',
+        '1/2 komkommer',
+        '2 tomaten',
+        '1 kleine rode ui',
+        'Sambal of sriracha naar smaak (optioneel)',
+      ],
+    },
+    {
+      title: 'Voor de knoflooksaus',
+      items: [
+        '3 volle el Griekse yoghurt',
+        '1 el mayonaise',
+        '1 tl knoflookpuree',
+        '1 tl kristalsuiker',
+        'Zout en peper naar smaak',
+      ],
+    },
+  ],
+
+  steps: [
+    'Meng de kippendijfilet met shoarmakruiden en laat de kruiden even intrekken terwijl je de BBQ voorbereidt. Verwarm de BBQ met het spit voor op ongeveer 225 °C.',
+    'Bevestig de kip aan het spit en laat rustig draaien totdat de kip gaar is en aan de buitenkant een mooi krokant randje krijgt.',
+    'Bak de friet in de frituurpan volgens de aanwijzingen op de verpakking, zodat deze lekker krokant is.',
+    'Haal de kip van het spit wanneer deze een kerntemperatuur minimaal 74°C heeft bereikt en snijd deze in kleine reepjes.',
+    'Verdeel de friet over twee aluminium schaaltjes, schep de gesneden kip erop en bestrooi met geraspte kaas. Zet de schaaltjes ongeveer 15 minuten terug op de BBQ van 225 °C, totdat de kaas goed is gesmolten.',
+    'Snijd terwijl de schaaltjes op de BBQ staan de ijsbergsla in fijne reepjes. Snijd de komkommer en tomaten in blokjes en de rode ui in dunne reepjes in de lengterichting.',
+    'Meng voor de knoflooksaus de Griekse yoghurt met mayonaise, knoflookpuree en kristalsuiker. Breng op smaak met zout en peper.',
+    'Haal de kapsalons van de BBQ en verdeel de sla, komkommer, tomaat en rode ui erover. Maak af met de knoflooksaus en eventueel wat sambal of sriracha.',
+  ],
+}

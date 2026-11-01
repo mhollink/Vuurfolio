@@ -1,0 +1,36 @@
+{
+  title: 'Jalapeño poppers met bacon',
+  description: 'Halve jalapeñopepers gevuld met romige roomkaas en cheddar, omwikkeld met bacon en rustig gegrild tot de vulling warm en de bacon krokant is.',
+  category: 'bijgerechten',
+  publishedAt: '2026-11-01',
+  featured: false,
+  difficulty: 'Makkelijk',
+  prepMinutes: 20,
+  cookMinutes: 30,
+  servings: 4,
+  temperatureC: 180,
+  tags: ['jalapeno', 'bacon', 'cheddar', 'snack', 'indirect grillen', 'pittig'],
+  ingredients: [
+    {
+      title: 'Voor de poppers',
+      items: ['8 grote jalapeñopepers', '8 dunne plakken ontbijtspek of bacon'],
+    },
+    {
+      title: 'Voor de vulling',
+      items: [
+        '200 g roomkaas',
+        '75 g geraspte cheddar',
+        '1 tl gerookt paprikapoeder',
+        'Versgemalen zwarte peper naar smaak',
+      ],
+    },
+  ],
+  steps: [
+    'Verwarm de BBQ indirect voor op ongeveer 180 °C. Zorg dat de poppers niet rechtstreeks boven de gloeiende kolen komen te liggen.',
+    'Snijd de jalapeños in de lengte doormidden en verwijder de zaadlijsten en zaadjes met een lepel. Draag eventueel handschoenen en raak tijdens het snijden je ogen niet aan.',
+    'Meng de roomkaas met de geraspte cheddar, het gerookte paprikapoeder en de zwarte peper tot een stevige vulling.',
+    'Vul iedere halve jalapeño met het kaasmengsel. Snijd de plakken bacon doormidden en wikkel om iedere gevulde helft een halve plak. Zet eventueel vast met een prikker.',
+    'Leg de poppers op het indirecte gedeelte van het rooster. Gaar ze ongeveer 25 tot 35 minuten met gesloten deksel, totdat de pepers zacht worden en de bacon goed gaar en krokant is.',
+    'Haal de poppers van de BBQ en laat ze een paar minuten afkoelen. De kaasvulling is direct van het rooster erg heet.',
+  ],
+}
