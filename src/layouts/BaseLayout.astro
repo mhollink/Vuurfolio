@@ -4,6 +4,8 @@ import SiteFooter from '../components/layout/SiteFooter.astro';
 import '../styles/theme.css';
 import '../styles/global.css';
 
+const beaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
+
 interface Props {
   title: string;
   description: string;
@@ -45,6 +47,11 @@ const socialImage = image ? new URL(image, site).toString() : undefined;
         set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')}
       />
     )}
+    <script
+      type="module"
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon={`{"token": "${beaconToken}"}`}
+    />
   </head>
   <body>
     <a class="skip" href="#main">
